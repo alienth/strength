@@ -1,3 +1,9 @@
+// Derived from http://norvig.com/ngrams/, which was in turn derived from the
+// Google Web Trillion Word Corpus, as described by Thorsten Brants and Alex
+// Franz (http://googleresearch.blogspot.com/2006/08/all-our-n-gram-are-belong-to-you.html),
+// and distributed by the Linguistic Data Consortium
+// (http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp?catalogId=LDC2006T13).
+
 package main
 
 var wordList = []string{
