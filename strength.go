@@ -57,7 +57,9 @@ func generateHexStrings(number int, bytes int) {
 }
 
 func generateWords(size int, numberOfWords int, list []string) {
-	fmt.Printf("%d bits of entropy:\n", math.Ilogb(math.Pow(float64(size), float64(numberOfWords))))
+	permutations := math.Pow(float64(size), float64(numberOfWords))
+	entropy := math.Ilogb(permutations)
+	fmt.Printf("%d bits of entropy:\n", entropy)
 	for x := 0; x < numberOfWords; x++ {
 		fmt.Print("    ")
 		for i := 0; i < numberOfWords; i++ {
