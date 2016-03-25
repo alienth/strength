@@ -1,6 +1,6 @@
 package main
 
-var wordlist = []string{
+var wordList = []string{
 	"the",
 	"of",
 	"and",
