@@ -56,8 +56,10 @@ func generateHexStrings(number int, bytes int) {
 	}
 }
 
+const punctuation = "!?."
+
 func generateWords(size int, numberOfWords int, list []string) {
-	permutations := math.Pow(float64(size), float64(numberOfWords))
+	permutations := math.Pow(float64(size), float64(numberOfWords)) * float64(len(punctuation))
 	entropy := math.Ilogb(permutations)
 	fmt.Printf("%d bits of entropy:\n", entropy)
 	for x := 0; x < numberOfWords; x++ {
@@ -67,7 +69,9 @@ func generateWords(size int, numberOfWords int, list []string) {
 			word := capitalize(list[foo.Int64()])
 			fmt.Printf("%s", word)
 		}
-		fmt.Println()
+		foo, _ := rand.Int(rand.Reader, big.NewInt(int64(len(punctuation))))
+		punc := punctuation[foo.Int64()]
+		fmt.Println(string(punc))
 	}
 	fmt.Println()
 }
